@@ -1,0 +1,111 @@
+#menu-page {
+    padding: 100px;
+
+    #food-preview {
+        padding: 0;
+        background: transparent;
+        
+        h2 {
+            color: #fff;
+            text-transform: uppercase;
+        }
+
+        .right-btn,
+        .left-btn {
+            background: #000;
+        }
+
+        .food-slider {
+  
+            .sliding-system {
+  
+                .slide {
+        
+                    &:hover {
+                        .background {
+                            background: #000;
+                            transform: translate3d(0, -200px, 0);
+                        }
+                        .content {
+                            .food-title {
+                                color: #fff;
+                            }
+        
+                            .food-description {
+                                color: #fff;
+                            }
+                        }
+                    }
+        
+                    .background {
+                        background: #fff;
+                        top: 0;
+                        bottom: 0;
+                        height: 100%;
+                        width: 100%;
+                        z-index: 1;
+                        position: absolute;
+                        transition: transform .3s ease-in-out;
+                    }
+        
+                    .content {
+                        z-index: 2;
+                        position: absolute;
+                        padding: 20px;
+                        width: 100%;
+                        display: flex;
+                        flex-direction: column;
+                        align-items: center;
+        
+                        .food-title {
+                            font-size: 2rem;
+                            font-weight: 900;
+                            margin-bottom: 3rem;
+                            color: #ed4852;
+                        }
+                        
+                        p.food-description {
+                            font-size: .8rem;
+                            font-weight: 400;
+                            line-height: 1.8;
+                            color: #7a8d99;
+                            margin-bottom: 2rem;
+                        }
+        
+                        .food-image {
+        
+                            img {
+                                width: 95%;
+                                max-width: 250px;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+// Small devices (landscape phones, 576px and up)
+@media (min-width: 0) and (max-width: 767px) {
+    #menu-page {
+        padding: 20px;
+    }
+}
+
+// Medium devices (tablets, 768px and up)
+@media (min-width: 768px) and (max-width: 991px) {
+    #menu-page {
+        padding: 20px;
+    }
+}
+
+// Large devices (desktops, 992px and up)
+@media (min-width: 992px) and (max-width: 1199) {
+
+}
+
+// Extra large devices (large desktops, 1200px and up)
+@media (min-width: 1200px) {
+
+}

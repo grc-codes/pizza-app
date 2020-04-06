@@ -1,4 +1,4 @@
-#about-page {
+#offers-page {
     padding: 100px;
 
     h1 {
@@ -14,18 +14,43 @@
         margin-bottom: 2rem;
         font-weight: 500;
     }
+
+    form {
+        .form-group {
+            label {
+                font-weight: 700;
+                margin-bottom: 10px;
+                color: #000;
+            }
+            .form-control {
+                padding: 10px;
+                border: 2px solid #9c1b24;
+                font-size: 1.3rem;
+                box-sizing: border-box;
+                height: auto;
+            }
+            button[type="submit"] {
+                background: #9c1b24;
+                border: none;
+                padding: 20px 40px;
+            }
+        }
+    }
 }
 
 // Small devices (landscape phones, 576px and up)
 @media (min-width: 0) and (max-width: 767px) {
-    #about-page {
+    #offers-page {
         padding: 20px;
+        h1 {
+            font-size: 2rem;
+        }
     }
 }
 
 // Medium devices (tablets, 768px and up)
 @media (min-width: 768px) and (max-width: 991px) {
-    #about-page {
+    #offers-page {
         padding: 20px;
     }
 }
