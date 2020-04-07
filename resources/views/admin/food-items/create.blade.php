@@ -36,7 +36,7 @@
                             <form action="#" id="basicform" data-parsley-validate="">
                                 <div class="form-group">
                                     <label for="inputItem">Item Name</label>
-                                    <input id="inputItem" type="text" name="item" data-parsley-trigger="change" required="" placeholder="Enter item name" autocomplete="off" class="form-control">
+                                    <input id="inputItem" type="text" name="title" data-parsley-trigger="change" required="" placeholder="Enter item name" autocomplete="off" class="form-control">
                                 </div>
                                 <div class="form-group">
                                     <label for="inputPrice">Item Price</label>
