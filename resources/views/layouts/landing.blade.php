@@ -4,7 +4,7 @@
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
 
-        <title>Laravel</title>
+        <title>Peter's Pies</title>
 
         <!-- Fonts -->
         <link href="https://fonts.googleapis.com/css?family=Nunito:200,600" rel="stylesheet">
@@ -18,7 +18,7 @@
             @include('includes.side-menu')
             <div class="welcome-jumbo">
                 <div class="status">NEW</div>
-                <h1>Peter Pies</h1>
+                <h1>Peter's Pies</h1>
                 <img src="./img/pizza-pie.png" class="pizza-pie" />
             </div>
         </section>
