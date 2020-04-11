@@ -18,4 +18,9 @@ class FoodItemsController extends Controller
     public function edit() {
         return view('admin/food-items/edit');
     }
+
+    public function __construct()
+    {
+        $this->middleware('auth');
+    }
 }

@@ -490,6 +490,7 @@ body {
   display: grid;
   width: 100%;
   height: 100vh;
+  overflow-x: hidden;
 }
 
 #app-layout .side-menu {
@@ -808,7 +809,6 @@ h2 {
     width: 100%;
     max-width: 100vw;
     padding: 20px;
-    overflow-y: scroll;
     transform: translate3d(0, 0, 0);
   }
 

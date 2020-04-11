@@ -14,4 +14,9 @@ class CustomersController extends Controller
     public function allReservations() {
         return view('admin/customers/all-reservations');
     }
+    
+    public function __construct()
+    {
+        $this->middleware('auth');
+    }
 }

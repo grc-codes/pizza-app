@@ -18,4 +18,9 @@ class FoodCategoriesController extends Controller
     public function edit() {
         return view('admin/food-categories/edit');
     }
+
+    public function __construct()
+    {
+        $this->middleware('auth');
+    }
 }

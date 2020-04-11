@@ -47,17 +47,35 @@
             <div class="card-body">
                 <div class="form-group">
                     <input
-                        id="name"
+                        id="fname"
                         type="text"
-                        class="form-control form-control-lg @error('name') is-invalid @enderror"
-                        name="name"
-                        value="{{ old('name') }}"
+                        class="form-control form-control-lg @error('fname') is-invalid @enderror"
+                        name="fname"
+                        value="{{ old('fname') }}"
                         required
-                        autocomplete="name"
+                        autocomplete="fname"
                         autofocus
-                        placeholder="Name"
+                        placeholder="First Name"
                     >
-                    @error('name')
+                    @error('fname')
+                        <span class="invalid-feedback" role="alert">
+                            <strong>{{ $message }}</strong>
+                        </span>
+                    @enderror
+                </div>
+                <div class="form-group">
+                    <input
+                        id="lname"
+                        type="text"
+                        class="form-control form-control-lg @error('lname') is-invalid @enderror"
+                        name="lname"
+                        value="{{ old('lname') }}"
+                        required
+                        autocomplete="lname"
+                        autofocus
+                        placeholder="Last Name"
+                    >
+                    @error('lname')
                         <span class="invalid-feedback" role="alert">
                             <strong>{{ $message }}</strong>
                         </span>
