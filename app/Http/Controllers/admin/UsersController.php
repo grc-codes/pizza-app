@@ -16,7 +16,10 @@ class UsersController extends Controller
     }
 
     public function create() {
-        return view('admin/users/create');
+        $roles = Role::All();
+        return view('admin/users/create', [
+            'roles' => $roles
+        ]);
     }
 
     public function store() {
