@@ -44,26 +44,45 @@
                                     </tr>
                                 </thead>
                                 <tbody>
-                                    <tr>
-                                        <th scope="row">1</th>
-                                        <td>John Doe</td>
-                                        <td>2/2/2020</td>
-                                        <td>
-                                            <a href="/admin/users/1/edit">
-                                                <i class="far fa-edit"></i>
-                                            </a>
-                                        </td>
-                                        <td>
-                                            <a 
-                                                href="/admin/users/1/delete"
-                                                onclick="if (! confirm('Are you sure you want to delete category?')) { return false; }"
-                                            >
-                                                <i class="far fa-trash-alt"></i>
-                                            </a>
-                                        </td>
-                                    </tr>
+                                    @foreach ($users as $user)
+                                        <tr>
+                                            <th scope="row">
+                                                {{ $user->id }}
+                                            </th>
+                                            <td>
+                                                {{ $user->email }}
+                                            </td>
+                                            <td>
+                                                {{ date('m/d/Y', strtotime($user->created_at)) }}
+                                            </td>
+                                            <td>
+                                                <a
+                                                    href="/admin/users/{{ $user->id }}/edit"
+                                                >
+                                                    <i class="far fa-edit"></i>
+                                                </a>
+                                            </td>
+                                            <td>
+                                                </a>
+                                                <a
+                                                    href="/admin/users/{{ $user->id }}/delete"
+                                                    onclick="
+                                                        event.preventDefault();
+                                                        document.getElementById('delete-user-{{ $user->id }}').submit();
+                                                    "
+                                                >
+                                                    <i class="far fa-trash-alt"></i>
+                                                </a>
+                                                <form id="delete-user-{{ $user->id }}" action="/admin/users/{{ $user->id }}/delete" method="POST" style="display: none;">
+                                                    @method('DELETE')
+                                                    @csrf
+                                                </form>
+                                            </td>
+                                        </tr>
+                                    @endforeach
                                 </tbody>
                             </table>
+                            {{ $users->links() }}
                         </div>
                     </div>
                 </div>
