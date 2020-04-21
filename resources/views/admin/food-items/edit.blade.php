@@ -33,7 +33,7 @@
                     <div class="card">
                         <h5 class="card-header">Edit this item</h5>
                         <div class="card-body">
-                            <form method="POST" action="/admin/food-items" class="splash-container">
+                            <form method="POST" action="/admin/food-items/{{$item->id}}" class="splash-container">
                                 @csrf
                                 @method('PUT')
                                 <div class="form-group">
@@ -43,7 +43,7 @@
                                         type="text"
                                         class="form-control form-control-lg @error('title') is-invalid @enderror"
                                         name="title"
-                                        value="{{ old('title') }}"
+                                        value="{{ old('title', $item->title) }}"
                                         required
                                         autocomplete="title"
                                         autofocus
@@ -62,7 +62,7 @@
                                         type="text"
                                         class="form-control form-control-lg @error('price') is-invalid @enderror"
                                         name="price"
-                                        value="{{ old('price') }}"
+                                        value="{{ old('price', $item->price) }}"
                                         required
                                         autocomplete="price"
                                         autofocus
@@ -80,11 +80,32 @@
                                         @foreach ($categories as $category)
                                             <option
                                                 value="{{$category->id}}"
+                                                @if ($category->id == $item->category_id)
+                                                    selected
+                                                @endif
                                             >
                                                 {{ $category->title }}
                                             </option>
                                         @endforeach
                                     </select>
+                                </div>
+                                <div class="form-group">
+                                    <label for="imageurl">Image URL</label>
+                                    <input
+                                        id="imageurl"
+                                        type="text"
+                                        class="form-control form-control-lg @error('imageurl') is-invalid @enderror"
+                                        name="image_url"
+                                        value="{{ old('image_url', $item->image_url) }}"
+                                        autocomplete="imageurl"
+                                        autofocus
+                                        placeholder="https://www"
+                                    >
+                                    @error('image_url')
+                                        <span class="invalid-feedback" role="alert">
+                                            <strong>{{ $message }}</strong>
+                                        </span>
+                                    @enderror
                                 </div>
                                 <div class="form-group">
                                     <label for="description">Description</label>
@@ -97,27 +118,9 @@
                                         autofocus
                                         placeholder="Write a Description"
                                     >
-                                        {{ old('description') }}
+                                        {{ old('description', $item->description) }}
                                     </textarea>
                                     @error('description')
-                                        <span class="invalid-feedback" role="alert">
-                                            <strong>{{ $message }}</strong>
-                                        </span>
-                                    @enderror
-                                </div>
-                                <div class="form-group">
-                                    <label for="imageurl">Image URL</label>
-                                    <input
-                                        id="imageurl"
-                                        type="text"
-                                        class="form-control form-control-lg @error('imageurl') is-invalid @enderror"
-                                        name="image_url"
-                                        value="{{ old('image_url') }}"
-                                        autocomplete="imageurl"
-                                        autofocus
-                                        placeholder="https://www"
-                                    >
-                                    @error('image_url')
                                         <span class="invalid-feedback" role="alert">
                                             <strong>{{ $message }}</strong>
                                         </span>
