@@ -21,39 +21,36 @@ class FoodCategoriesController extends Controller
 
     public function store() {
         $category = new FoodCategory();
-        $category->fname = request('fname');
-        $category->lname = request('lname');
-        $category->email = request('email');
-        $category->password = Hash::make(request('password'));
+
+        $category->title = request('title');
+        $category->description = request('description');
+        $category->image_url = request('image_url');
         $category->save();
-        $category->roles()->attach(request('role_id'));
+
         return redirect('/admin/food-categories');
     }
 
     public function edit($id) {
         $category = FoodCategory::find($id);
+
         return view('admin/food-categories/edit', [
-            'user' => $category,
-            'roles' => $roles
+            'category' => $category
         ]);
     }
 
     public function update($id) {
         request()->validate([
-            'fname' => ['required', 'string', 'max:255'],
-            'lname' => ['required', 'string', 'max:255'],
-            'email' => ['required', 'string', 'email', 'max:255'],
-            'password' => ['required', 'string', 'min:8', 'confirmed'],
-            'role_id' => ['required']
+            'title' => ['required', 'string', 'max:255'],
+            'description' => ['required', 'string'],
+            'image_url' => ['required', 'string',]
         ]);
         
         $category = FoodCategory::find($id);
-        $category->fname = request('fname');
-        $category->lname = request('lname');
-        $category->email = request('email');
-        $category->password = Hash::make(request('password'));
+        $category->title = request('title');
+        $category->description = request('description');
+        $category->image_url = request('image_url');
         $category->save();
-        $category->roles()->sync([request('role_id')]);
+
         return redirect('/admin/food-categories');
     }
 
