@@ -33,14 +33,64 @@
                     <div class="card">
                         <h5 class="card-header">Create a new category</h5>
                         <div class="card-body">
-                            <form action="#" id="basicform" data-parsley-validate="">
+                            <form method="POST" action="/admin/food-categories" class="splash-container">
+                                @csrf
                                 <div class="form-group">
-                                    <label for="inputCategory">Category Name</label>
-                                    <input id="inputCategory" type="text" name="category" data-parsley-trigger="change" required="" placeholder="Enter category name" autocomplete="off" class="form-control">
+                                    <label for="title">Title</label>
+                                    <input
+                                        id="title"
+                                        type="text"
+                                        class="form-control form-control-lg @error('title') is-invalid @enderror"
+                                        name="title"
+                                        value="{{ old('title') }}"
+                                        required
+                                        autocomplete="title"
+                                        autofocus
+                                        placeholder="Give Category a Title"
+                                    >
+                                    @error('title')
+                                        <span class="invalid-feedback" role="alert">
+                                            <strong>{{ $message }}</strong>
+                                        </span>
+                                    @enderror
                                 </div>
                                 <div class="form-group">
-                                    <label for="inputCategoryImageUrl">Category Image URL</label>
-                                    <input id="inputCategoryImageUrl" type="text" name="image_url" data-parsley-trigger="change" required="" placeholder="https://www.peterspies.com/img/pizza-slice.jpg" autocomplete="off" class="form-control">
+                                    <label for="description">Description</label>
+                                    <textarea
+                                        id="description"
+                                        type="text"
+                                        class="form-control form-control-lg @error('description') is-invalid @enderror"
+                                        name="description"
+                                        required
+                                        autofocus
+                                        placeholder="Write a Description"
+                                    >
+                                        {{ old('description') }}
+                                    </textarea>
+                                    @error('description')
+                                        <span class="invalid-feedback" role="alert">
+                                            <strong>{{ $message }}</strong>
+                                        </span>
+                                    @enderror
+                                </div>
+                                <div class="form-group">
+                                    <label for="imageurl">Image URL</label>
+                                    <input
+                                        id="imageurl"
+                                        type="text"
+                                        class="form-control form-control-lg @error('imageurl') is-invalid @enderror"
+                                        name="image_url"
+                                        value="{{ old('image_url') }}"
+                                        required
+                                        autocomplete="imageurl"
+                                        autofocus
+                                        placeholder="https://www"
+                                    >
+                                    @error('image_url')
+                                        <span class="invalid-feedback" role="alert">
+                                            <strong>{{ $message }}</strong>
+                                        </span>
+                                    @enderror
                                 </div>
                                 <div class="row">
                                     <div class="col-sm-6 pb-2 pb-sm-4 pb-lg-0 pr-0">

@@ -127,7 +127,7 @@
                                     <select name="role_id" class="form-control" id="inputrole">
                                         @foreach ($roles as $role)
                                             <option
-                                                value="1"
+                                                value="{{ $role->id }}"
                                                 @if ($role->title == 'Employee')
                                                     selected
                                                 @endif

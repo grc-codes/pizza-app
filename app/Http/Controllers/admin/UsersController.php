@@ -26,13 +26,23 @@ class UsersController extends Controller
     }
 
     public function store() {
+        request()->validate([
+            'fname' => ['required', 'string', 'max:255'],
+            'lname' => ['required', 'string', 'max:255'],
+            'email' => ['required', 'string', 'email', 'max:255'],
+            'password' => ['required', 'string', 'min:8', 'confirmed'],
+            'role_id' => ['required']
+        ]);
+
         $user = new User();
+        
         $user->fname = request('fname');
         $user->lname = request('lname');
         $user->email = request('email');
         $user->password = Hash::make(request('password'));
         $user->save();
         $user->roles()->attach(request('role_id'));
+        
         return redirect('/admin/users');
     }
 
@@ -61,6 +71,7 @@ class UsersController extends Controller
         $user->password = Hash::make(request('password'));
         $user->save();
         $user->roles()->sync([request('role_id')]);
+        
         return redirect('/admin/users');
     }
 
