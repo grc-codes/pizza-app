@@ -62,13 +62,6 @@
                                                 {{ date('m/d/Y', strtotime($member->updated_at)) }}
                                             </td>
                                             <td>
-                                                <a
-                                                    href="/admin/members/{{ $member->id }}/edit"
-                                                >
-                                                    <i class="far fa-edit"></i>
-                                                </a>
-                                            </td>
-                                            <td>
                                                 </a>
                                                 <a
                                                     href="/admin/members/{{ $member->id }}/delete"
@@ -88,6 +81,7 @@
                                     @endforeach
                                 </tbody>
                             </table>
+                            {{ $members->links() }}
                         </div>
                     </div>
                 </div>
