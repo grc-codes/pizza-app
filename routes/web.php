@@ -52,7 +52,10 @@ Route::delete('/admin/users/{id}/delete', 'admin\UsersController@delete');
 
 
 // Admin Customers
-Route::get('/admin/offers-members', 'admin\CustomersController@allOffersMembers');
+// Admin Members
+Route::get('/admin/members', 'admin\MemberController@index');
+
+// Admin Reservations
 Route::get('/admin/reservations', 'admin\CustomersController@allReservations');
 
 // Admin Authentication
