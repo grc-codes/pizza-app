@@ -81,9 +81,6 @@
                                     </ul>
                                 </div>
                             </li>
-                            <li class="nav-item">
-                                <a class="nav-link" href="/admin/reservations">Reservations <span class="badge badge-secondary">New</span></a>
-                            </li>
                         </ul>
                     </div>
                 </li>
