@@ -42,14 +42,6 @@ class ReservationController extends Controller
         return redirect('/admin/reservations');
     }
 
-    public function edit($id) {
-        $reservation = Reservation::find($id);
-
-        return view('admin/reservations/edit', [
-            'reservation' => $reservation
-        ]);
-    }
-
     public function update($id) {
         request()->validate([
             'fname' => ['required', 'string'],
