@@ -68,11 +68,11 @@ Route::delete('/admin/reservations/{id}/delete', 'admin\ReservationController@de
 
 // Admin Settings
 Route::get('/admin/settings/general', 'admin\SettingsController@general');
-Route::post('/admin/settings/general', 'admin\SettingsController@saveGeneral');
+Route::put('/admin/settings/general', 'admin\SettingsController@saveGeneral');
 Route::get('/admin/settings/seo', 'admin\SettingsController@seo');
-Route::post('/admin/settings/seo', 'admin\SettingsController@saveSeo');
+Route::put('/admin/settings/seo', 'admin\SettingsController@saveSeo');
 Route::get('/admin/settings/social', 'admin\SettingsController@social');
-Route::post('/admin/settings/social', 'admin\SettingsController@saveSocial');
+Route::put('/admin/settings/social', 'admin\SettingsController@saveSocial');
 
 
 // Admin Authentication
