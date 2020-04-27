@@ -1,6 +1,6 @@
 <div class="side-menu">
     <a href="/" class="logo">
-        <img src="/img/restaurant-logo.png" />
+        <img src="{{ $settings["general"]->logo_image_url }}" />
     </a>
     <div class="menu">
     <div class="menu-title">
@@ -25,23 +25,23 @@
     </ul>
     </div>
     <div class="social-icons">
-    <a href="#">
+    <a href="{{ $settings["social"]->facebook_url }}" target="_new">
         <i class="fa fa-facebook" aria-hidden="true"></i>
     </a>
-    <a href="#">
+    <a href="{{ $settings["social"]->twitter_url }}">
         <i class="fa fa-twitter" aria-hidden="true"></i>
     </a>
-    <a href="#">
+    <a href="{{ $settings["social"]->instagram_url }}">
         <i class="fa fa-instagram" aria-hidden="true"></i>
     </a>
     </div>
     <div class="location">
     <div class="address">
-        234 Main St, <br>
-        New York, New York 11747
+        {{ $settings["general"]->address_1 }}, <br>
+        {{ $settings["general"]->city }}, {{ $settings["general"]->state }} {{ $settings["general"]->zipcode }}
     </div>
     <div class="phone-number">
-        <a href="tel:7182198652">718-219-8652</a>
+        <a href="tel:{{ $settings["general"]->phone_number }}">{{ $settings["general"]->phone_number }}</a>
     </div>
     </div>
 </div>
