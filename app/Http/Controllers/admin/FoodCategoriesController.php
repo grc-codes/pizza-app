@@ -66,8 +66,8 @@ class FoodCategoriesController extends Controller
         return redirect('/admin/food-categories');
     }
 
-    public function __construct()
-    {
-        $this->middleware('auth');
-    }
+    // public function __construct()
+    // {
+    //     $this->middleware('auth');
+    // }
 }
