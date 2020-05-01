@@ -37,7 +37,16 @@ class User extends Authenticatable
         'email_verified_at' => 'datetime',
     ];
 
+    // Assigns roles to users
     public function roles() {
         return $this->belongsToMany('App\Role');
+    }
+
+    public function isAdmin() {
+        if($this->roles->contains(1)) {
+            return true;
+        } else {
+            return false;
+        }
     }
 }

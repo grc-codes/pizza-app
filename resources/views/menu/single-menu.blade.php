@@ -1,7 +1,7 @@
 @extends('layouts.app')
 
 @section('title')
-    {{ $foodItem }} - {{ $settings["general"]->site_title }}
+    {{ $foodCategory }} - {{ $settings["general"]->site_title }}
 @endsection
 
 @section('content')
@@ -11,52 +11,21 @@
                 <div class="content-box">
                     <div class="row">
                         <div class="col-md-12">
-                            <h1>Pizzas</h1>
+                            <h1>{{ $foodCategory }}</h1>
                         </div>
-                        <div class="col-md-6">
-                            <div class="item">
-                                <div class="title">
-                                    <h4>Philly Pizza Slice</h4>
-                                    <span class="price">$2</span>
+                        @foreach ($foodItems as $item)
+                            <div class="col-md-6">
+                                <div class="item">
+                                    <div class="title">
+                                        <h4>{{ $item->title }}</h4>
+                                        <span class="price">$2</span>
+                                    </div>
+                                    <div class="description">
+                                        <p>White Dough, Mozzerella, Tomato Sauce</p>
+                                    </div>
                                 </div>
-                                <div class="description">
-                                    <p>White Dough, Mozzerella, Tomato Sauce</p>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-md-6">
-                            <div class="item">
-                                <div class="title">
-                                    <h4>Philly Pizza Slice</h4>
-                                    <span class="price">$2</span>
-                                </div>
-                                <div class="description">
-                                    <p>White Dough, Mozzerella, Tomato Sauce</p>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-md-6">
-                            <div class="item">
-                                <div class="title">
-                                    <h4>Philly Pizza Slice</h4>
-                                    <span class="price">$2</span>
-                                </div>
-                                <div class="description">
-                                    <p>White Dough, Mozzerella, Tomato Sauce</p>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-md-6">
-                            <div class="item">
-                                <div class="title">
-                                    <h4>Philly Pizza Slice</h4>
-                                    <span class="price">$2</span>
-                                </div>
-                                <div class="description">
-                                    <p>White Dough, Mozzerella, Tomato Sauce</p>
-                                </div>
-                            </div>
-                        </div>
+                            </div>                            
+                        @endforeach
                     </div>
                 </div>
             </div>

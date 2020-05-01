@@ -41,5 +41,15 @@ class FoodItemSeeder extends Seeder
             'updated_at' => Carbon::now(),
             'created_at' => Carbon::now()
         ]);
+
+        DB::table('food_items')->insert([
+            'title' => 'Chicken Wings',
+            'description' => 'Lorem ipsum, dolor sit amet consectetur adipisicing elit. Eaque eius at in voluptatum autem illum quo vel magnam nesciunt! Sapiente praesentium dignissimos et minima reprehenderit atque asperiores architecto qui amet?',
+            'image_url' => '/img/chicken.png',
+            'price' => 7.50,
+            'category_id' => 2,
+            'updated_at' => Carbon::now(),
+            'created_at' => Carbon::now()
+        ]);
     }
 }

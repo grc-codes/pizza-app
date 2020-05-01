@@ -15,7 +15,7 @@ class FoodCategorySeeder extends Seeder
         DB::table('food_categories')->insert([
             'title' => 'Pizza',
             'description' => 'Lorem ipsum, dolor sit amet consectetur adipisicing elit. Eaque eius at in voluptatum autem illum quo vel magnam nesciunt! Sapiente praesentium dignissimos et minima reprehenderit atque asperiores architecto qui amet?',
-            'image_url' => '/img/pizza-slice',
+            'image_url' => '/img/pizza-slice.png',
             'updated_at' => Carbon::now(),
             'created_at' => Carbon::now()
         ]);
