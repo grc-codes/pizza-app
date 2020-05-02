@@ -51,5 +51,61 @@ class FoodCategorySeeder extends Seeder
             'updated_at' => Carbon::now(),
             'created_at' => Carbon::now()
         ]);
+
+        DB::table('food_categories')->insert([
+            'title' => 'Pizza1',
+            'description' => 'Lorem ipsum, dolor sit amet consectetur adipisicing elit. Eaque eius at in voluptatum autem illum quo vel magnam nesciunt! Sapiente praesentium dignissimos et minima reprehenderit atque asperiores architecto qui amet?',
+            'image_url' => '/img/pizza-slice.png',
+            'updated_at' => Carbon::now(),
+            'created_at' => Carbon::now()
+        ]);
+
+        DB::table('food_categories')->insert([
+            'title' => 'Pizza2',
+            'description' => 'Lorem ipsum, dolor sit amet consectetur adipisicing elit. Eaque eius at in voluptatum autem illum quo vel magnam nesciunt! Sapiente praesentium dignissimos et minima reprehenderit atque asperiores architecto qui amet?',
+            'image_url' => '/img/pizza-slice.png',
+            'updated_at' => Carbon::now(),
+            'created_at' => Carbon::now()
+        ]);
+
+        DB::table('food_categories')->insert([
+            'title' => 'Pizza3',
+            'description' => 'Lorem ipsum, dolor sit amet consectetur adipisicing elit. Eaque eius at in voluptatum autem illum quo vel magnam nesciunt! Sapiente praesentium dignissimos et minima reprehenderit atque asperiores architecto qui amet?',
+            'image_url' => '/img/pizza-slice.png',
+            'updated_at' => Carbon::now(),
+            'created_at' => Carbon::now()
+        ]);
+
+        DB::table('food_categories')->insert([
+            'title' => 'Pizza4',
+            'description' => 'Lorem ipsum, dolor sit amet consectetur adipisicing elit. Eaque eius at in voluptatum autem illum quo vel magnam nesciunt! Sapiente praesentium dignissimos et minima reprehenderit atque asperiores architecto qui amet?',
+            'image_url' => '/img/pizza-slice.png',
+            'updated_at' => Carbon::now(),
+            'created_at' => Carbon::now()
+        ]);
+
+        DB::table('food_categories')->insert([
+            'title' => 'Pizza5',
+            'description' => 'Lorem ipsum, dolor sit amet consectetur adipisicing elit. Eaque eius at in voluptatum autem illum quo vel magnam nesciunt! Sapiente praesentium dignissimos et minima reprehenderit atque asperiores architecto qui amet?',
+            'image_url' => '/img/pizza-slice.png',
+            'updated_at' => Carbon::now(),
+            'created_at' => Carbon::now()
+        ]);
+
+        DB::table('food_categories')->insert([
+            'title' => 'Pizza6',
+            'description' => 'Lorem ipsum, dolor sit amet consectetur adipisicing elit. Eaque eius at in voluptatum autem illum quo vel magnam nesciunt! Sapiente praesentium dignissimos et minima reprehenderit atque asperiores architecto qui amet?',
+            'image_url' => '/img/pizza-slice.png',
+            'updated_at' => Carbon::now(),
+            'created_at' => Carbon::now()
+        ]);
+
+        DB::table('food_categories')->insert([
+            'title' => 'Pizza7',
+            'description' => 'Lorem ipsum, dolor sit amet consectetur adipisicing elit. Eaque eius at in voluptatum autem illum quo vel magnam nesciunt! Sapiente praesentium dignissimos et minima reprehenderit atque asperiores architecto qui amet?',
+            'image_url' => '/img/pizza-slice.png',
+            'updated_at' => Carbon::now(),
+            'created_at' => Carbon::now()
+        ]);
     }
 }
