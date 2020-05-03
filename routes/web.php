@@ -73,6 +73,7 @@ Route::delete('/admin/reservations/{id}/delete', 'admin\ReservationController@de
 // Admin Settings
 Route::get('/admin/settings/general', 'admin\SettingsController@general')->middleware('role:Admin');
 Route::put('/admin/settings/general', 'admin\SettingsController@saveGeneral')->middleware('role:Admin');
+Route::get('/admin/settings/seo', 'admin\SettingsController@seo')->middleware('role:Admin');
 Route::put('/admin/settings/seo', 'admin\SettingsController@saveSeo')->middleware('role:Admin');
 Route::get('/admin/settings/social', 'admin\SettingsController@social')->middleware('role:Admin');
 Route::put('/admin/settings/social', 'admin\SettingsController@saveSocial')->middleware('role:Admin');
